@@ -1,0 +1,81 @@
+<html>
+<head>
+
+<title>زيادة المتابعين</title>
+
+<body>
+
+   <label>أدخل عدد المتابعين:</label><br>
+<input type="number" id="followers" placeholder="مثال: 1000" oninput="calculatePrice()"><br>
+
+      <div id="priceResult">دينار عراقي: 0 </div>
+
+<script>
+  function calculatePrice() {
+    const pricePerFollower = 0.01; // السعر لكل متابع (غيّره حسب رغبتك)
+    const followers = parseInt(document.getElementById("followers").value) || 0;
+    const total = followers * pricePerFollower;
+   document.getElementById("priceResult").textContent =       "عراقي: " + total.toFixed(2) + " دينار";
+  }
+</script>
+
+
+<p dir="rtl"> <table><td><h2>لكل 1000متابع انستكرام 3000اسياسيل </h2></td>
+
+
+
+
+
+
+<p dir="rtl"> <table><td><h2>لكل 100الف مشاهدة 3000اسياسيل </h2></td>
+
+
+
+<input type="range" id="views" min="100" max="1000000" step="100" value="1000" oninput="updateViewPrice()">
+<p>عدد المشاهدات: <span id="viewCount">1000</span></p>
+<p>السعر: <span id="viewPrice">5.00</span>  دينار عراقي</p>
+
+<script>
+  const pricePerView = 0.003; // السعر لكل مشاهدة (نصف هللة مثلاً)
+
+  function updateViewPrice() {
+    const views = document.getElementById("views").value;
+    document.getElementById("viewCount").innerText = views;
+    document.getElementById("viewPrice").innerText = (views * pricePerView).toFixed(2);
+  }
+
+  updateViewPrice(); // للتحديث عند التحميل
+</script>
+
+
+
+
+
+<p dir="rtl"> <table><td><h2>لكل15000مشاركة فديو ريلز انستاكرام -حركة الاكس بلور 1000اسياسيل </h2></td>
+
+
+
+<input type="range" id="shares" min="100" max="15000" step="100" value="500" oninput="updateSharePrice()">
+<p>عدد المشاركات: <span id="shareCount">500</span></p>
+<p>السعر: <span id="sharePrice">1125</span> دينار عراقي</p>
+
+<script>
+  const pricePerShare = 0.068; // السعر لكل مشاركة بالدينار العراقي
+
+  function updateSharePrice() {
+    const shares = document.getElementById("shares").value;
+    document.getElementById("shareCount").innerText = shares;
+    document.getElementById("sharePrice").innerText = Math.round(shares * pricePerShare);
+  }
+
+  updateSharePrice(); // التحديث عند التحميل
+</script>
+</body>
+</head>
+</html>
+
+
+
+
+
+
